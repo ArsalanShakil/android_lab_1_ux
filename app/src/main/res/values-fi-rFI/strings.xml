@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">android_lab1</string>
+    <string name="number">2</string>
+    <string name="introText">"Hei maailma! "</string>
+    <string name="clickBtn">"Napsauta minua "</string>
+</resources>
