@@ -3,4 +3,8 @@
     <string name="introText">Hello World!</string>
     <string name="number">2</string>
     <string name="clickBtn">Click Me</string>
+    <string name="nameTxt">Name</string>
+    <string name="summerTxt">Goodbye Summer</string>>
+
+
 </resources>

@@ -4,4 +4,8 @@
     <string name="number">2</string>
     <string name="introText">"Hei maailma! "</string>
     <string name="clickBtn">"Napsauta minua "</string>
+    <string name="nameTxt">Nimi</string>
+    <string name="introName">Hei</string>>
+    <string name="summerTxt">Hyvästi kesä</string>>
+
 </resources>
