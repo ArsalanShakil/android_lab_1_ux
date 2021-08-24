@@ -34,32 +34,5 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
-
-
-/*
-        clickBtn.setOnClickListener {
-            val username: String? = editTextPersonName.text.toString()
-
-            if (editTextPersonName.text.isEmpty()) {
-
-                when (greetingText.text) {
-                    "Hello World" -> greetingText.text = "Goodbye Summer"
-                    "Goodbye Summer" -> greetingText.text = "Hello World"
-                    else -> greetingText.text = "Hello World"
-                }
-
-            } else{
-                greetingText.text = "Hello $username "
-                editTextPersonName.text.clear()
-            }
-
-
-
-
-        }*/
-
-
-
-
     }
 }
