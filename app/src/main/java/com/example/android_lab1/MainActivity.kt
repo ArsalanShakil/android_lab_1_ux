@@ -20,15 +20,15 @@ class MainActivity : AppCompatActivity() {
             val username: String = editTextPersonName.text.toString()
 
             if (editTextPersonName.text.isNotEmpty()) {
-                val visibleTxt = "Hello $username"
+                val visibleTxt = resources.getString(R.string.hello) + " " +username
                 greetingText.text = visibleTxt
                 editTextPersonName.text.clear()
             } else {
 
                 when (greetingText.text) {
-                    "Hello World!" -> greetingText.text = "Goodbye Summer"
-                    "Goodbye Summer" -> greetingText.text = "Hello World!"
-                    else -> greetingText.text = "Hello World!"
+                    resources.getString(R.string.introText) -> greetingText.text = resources.getString(R.string.summerTxt)
+                    resources.getString(R.string.summerTxt) -> greetingText.text = resources.getString(R.string.introText)
+                    else -> greetingText.text = resources.getString(R.string.introText)
                 }
 
             }
