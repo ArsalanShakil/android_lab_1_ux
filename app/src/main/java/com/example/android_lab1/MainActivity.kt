@@ -2,9 +2,12 @@ package com.example.android_lab1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.EditText
+import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
 
 
 class MainActivity : AppCompatActivity() {
@@ -33,6 +36,19 @@ class MainActivity : AppCompatActivity() {
 
             }
 
+        }
+
+        val fab: View = findViewById(R.id.floatingActionButton)
+        fab.setOnClickListener { view ->
+            Toast.makeText(this,R.string.introText,Toast.LENGTH_SHORT).show()
+        }
+
+
+        val snackbarBtn: View = findViewById(R.id.snackbarBtn)
+        snackbarBtn.setOnClickListener { view ->
+            Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
+                .setAction("Action", null)
+                .show()
         }
     }
 }
