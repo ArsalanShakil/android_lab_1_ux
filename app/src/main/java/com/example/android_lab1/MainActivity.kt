@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
         val fab: View = findViewById(R.id.floatingActionButton)
         fab.setOnClickListener { view ->
-            // Toast.makeText(this,R.string.introText,Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"You have a notification :)",Toast.LENGTH_SHORT).show()
             buildNotification()
         }
 
@@ -68,7 +68,9 @@ class MainActivity : AppCompatActivity() {
         val snackbarBtn: View = findViewById(R.id.snackbarBtn)
         snackbarBtn.setOnClickListener { view ->
             Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
-                .setAction("Action", null)
+                .setAction("Close") {
+
+                }
                 .show()
         }
 
@@ -76,8 +78,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun createNotificationChannel() {
-        // Create the NotificationChannel, but only on API 26+ because
-        // the NotificationChannel class is new and not in the support library
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = "Notification Title"
             val descriptionText = "Some Description"
@@ -100,20 +100,16 @@ class MainActivity : AppCompatActivity() {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
         val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
-
         val builder = NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_baseline_notifications_24)
-            .setContentTitle("My notification")
-            .setContentText("Hello World!")
+            .setContentTitle("New notification")
+            .setContentText("You have clicked button successfully")
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-            // Set the intent that will fire when the user taps the notification
             .setContentIntent(pendingIntent)
             .setAutoCancel(true)
-        with(NotificationManagerCompat.from(this)) {
-            // notificationId is a unique int for each notification that you must define
-            notify(notificationId, builder.build())
-        }
-
+            .addAction(R.drawable.ic_baseline_favorite_24,"Open",pendingIntent)
+            .build()
+        NotificationManagerCompat.from(this).notify(101, builder)
     }
 
 }
