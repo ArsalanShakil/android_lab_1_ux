@@ -68,8 +68,9 @@ class MainActivity : AppCompatActivity() {
         val snackbarBtn: View = findViewById(R.id.snackbarBtn)
         snackbarBtn.setOnClickListener { view ->
             Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
-                .setAction("Close") {
-
+                .setAction("Open") {
+                    val intent = Intent(this, AlertDetails::class.java)
+                    startActivity(intent)
                 }
                 .show()
         }
